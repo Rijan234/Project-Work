@@ -30,6 +30,12 @@
         <a href="{{ route('student.edit', $student->id ) }}">
           edit
         </a>
+            <form action="{{ route('student.destroy', $student->id) }}" method="post">
+          @csrf
+          @method('delete')
+        <button  type="submit" class="btn btn-sm btn-primary">Delete</button>
+        </form>
+       
       </td>
     </tr>
   @endforeach
